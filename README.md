@@ -92,3 +92,5 @@ Metadata updates when a new sample is selected (10 points)
 App Successfully Deployed to Github Pages (10 points)
 
 I used VSCode to create this project, following along with my instructor (Drew's code to see where my brackets, semicolons and commas belonged)
+
+This dashboard must have an index.html files so that it may run (always lower case index.html), the code should have sample data, app.js and bonus.js
