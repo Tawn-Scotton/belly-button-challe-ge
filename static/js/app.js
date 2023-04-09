@@ -14,8 +14,13 @@ function buildCharts(sample){
         let otuIDs = result.otu_ids;
         let otuLabels = result.otu_labels;
         let sampleValues = result.sample_values;
+
          //Log the data to the console
+
+    
         console.log(otuIDs, otuLabels, sampleValues);
+        
+        
         
         let bubbleLayout = {
             title: "Bacteria Cultures Per Sample",
@@ -42,7 +47,7 @@ function buildCharts(sample){
 
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     //Select top ten items to display in descending order
-    let yticks = otuIDs.slice(0, 10).Map(otuID => `OTU ${otuID}`).reverse();
+    let yticks = otuIDs.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse();
     let barData = [
        {
            
@@ -68,9 +73,9 @@ function buildMetadata(sample){
     d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json").then((data) => {
         let metadata = data.metadata; 
 
-        let resultarray = metadata.filter(sampleDictionary => sampleDictionary.id == sample);
+        let resultArray = metadata.filter(sampleDictionary => sampleDictionary.id == sample);
 
-        let result = resultsArray[0];
+        let result = resultArray[0];
 
         let PANEL= d3.select("#sample-metadata");
 
@@ -105,7 +110,7 @@ function init(){
         let firstSample = sampleNames[0];
         buildCharts(firstSample);
         buildMetadata(firstSample);
-        buildBubbleChart(firstSample);
+        //buildBubbleChart(firstSample);
        
     })
     }

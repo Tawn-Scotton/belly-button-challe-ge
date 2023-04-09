@@ -3,12 +3,12 @@ function buildGauge(wfreq){
 
         let degrees = 180 - level;
         let radius = 0.5;
-        let radians = (degree * Math.PI) / 180;
+        let radians = (degrees * Math.PI) / 180;
         let x = radius * Math.cos(radians);
         let y = radius * Math.sin(radians);
 
         let mainPath = "M-.0 -0.05 L .0 0.05 L"
-        let pathX = Stromg(x);
+        let pathX = String(x);
         let space = " ";
         let pathY = String(y);
         let pathEnd = " Z";
